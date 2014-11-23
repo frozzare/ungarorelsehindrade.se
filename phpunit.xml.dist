@@ -1,0 +1,11 @@
+<phpunit
+	bootstrap="tests/includes/bootstrap.php"
+        backupGlobals="false"
+        colors="true"
+        >
+    <testsuites>
+        <testsuite name="ungarh">
+            <directory prefix="test-" suffix=".php">./tests/cases</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

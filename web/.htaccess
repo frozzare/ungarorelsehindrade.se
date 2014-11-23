@@ -1,0 +1,1 @@
+RewriteRule ^wp(?:\/|)$ /wp/wp-login.php [QSA,L]
