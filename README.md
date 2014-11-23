@@ -8,7 +8,6 @@ Unga Rörelsehindrade [![crip.io](http://forthebadge.com/badges/built-by-crips.s
 ## ToC
 * [Get started](#get-started)
 * [Documentation](#documentation) 
-  * [Configuration files](#configuration-files)
   * [Deployment](#deployment)
   * [Helper functions](#helper-functions)
   * [Folder structure](#folder-structure)
