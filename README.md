@@ -1,9 +1,9 @@
-ungarh
+Unga Rörelsehindrade [![crip.io](http://forthebadge.com/badges/built-by-crips.svg)](http://crip.io)
 ========
 
 **Note: This project and its documentation are still under active development, so use it in production on your own risk**
 
-WordPress stack with a good base structure and deployment tool using [Fabric](http://www.fabfile.org/en/latest/) and [Vagrant](http://www.vagrantup.com/). The webserver in use is nginx and more detail about what is installed can you se [here](https://github.com/frozzare/isodev)
+> Main site for Unga Rörelsehindrade – Developed and designed by [Johnie Hjelm](http://johnie.se)
 
 ## ToC
 * [Get started](#get-started)
@@ -18,7 +18,7 @@ WordPress stack with a good base structure and deployment tool using [Fabric](ht
 
 ## Get started
 
-ungarh is easy to get started with. Clone the git repository and install all required packages and WordPress with [composer](#composer). Then you can run `vagrant up` to get the Vagrant box up and running.
+This project is easy to get started with. Clone the git repository and install all required packages and WordPress with [composer](#composer). Then you can run `vagrant up` to get the Vagrant box up and running.
 
 Using [vassh](https://github.com/x-team/vassh) you can create the database:
 
@@ -29,10 +29,10 @@ Using [vassh](https://github.com/x-team/vassh) you can create the database:
 And then install the WordPress site using [vassh](https://github.com/x-team/vassh) and [WP-CLI](http://wp-cli.org):
 
 ```
-/path/to/ungarh$ vassh "wp core install --title='ungarh' --admin_user='admin' --admin_password='password' --admin_email='my-email@gmail.com' --url='dev.ungarh.com'"
+/path/to/ungarh$ vassh "wp core install --title='Unga Rörelsehindrade' --admin_user='admin' --admin_password='password' --admin_email='my-email@gmail.com' --url='ungarh.dev'"
 ```
 
-Then you should be able to access your WordPress site on [dev.ungarh.com](http://dev.ungarh.com)
+Then you should be able to access your WordPress site on [ungarh.dev](http://ungarh.dev)
 
 ## Documentation
 
@@ -46,13 +46,9 @@ Example:
 /path/to/ungarh$ composer install
 ```
 
-### Configuration files
-
-TBA.
-
 ### Deployment
 
-ungarh uses [Mina](http://mina-deploy.github.io/mina/) for deployment. In the `config/deploy` directory there are two files, one for production and one for staging that you should change so it fits your needs.
+This project uses [Mina](http://mina-deploy.github.io/mina/) for deployment. In the `config/deploy` directory there are two files, one for production and one for staging that you should change so it fits your needs.
 
 Then you can deploy. Be sure to run `mina setup` for setting up folders on your servers. Then you can run `mina deploy` for staging deployment or `mina production deploy` for production deploy.
 
@@ -62,35 +58,35 @@ You should read the [Mina](http://mina-deploy.github.io/mina/) documentation!
 
 ### Helper functions
 
-##### iso_is_post_stype
+##### urh_is_post_stype
 
 Check if the post or the current post has the given post type. Will return true or false.
 
-`iso_is_post_stype([$id,] $post_type)`
+`urh_is_post_stype([$id,] $post_type)`
 
-##### iso_is_method
+##### urh_is_method
 
 Check if request method is the same as the given method. Will return true or false.
 
-`iso_is_method($method)`
+`urh_is_method($method)`
 
-##### iso_remove_trailing_quotes
+##### urh_remove_trailing_quotes
 
 Remove trailing dobule or/and single quote. Will return string without trailing quotes.
 
-`iso_remove_trailing_quotes($str)`
+`urh_remove_trailing_quotes($str)`
 
 Example:
 
 ```
-iso_remove_trailing_quotes('\"hello\"') => '"hello"'
+urh_remove_trailing_quotes('\"hello\"') => '"hello"'
 ```
 
-##### iso_current_url
+##### urh_current_url
 
 Get the current url. If passing true to the function it will parse the url with `parse_url` and return it as a object. If not it will return it just a string.
 
-`iso_current_url($parse = false)`
+`urh_current_url($parse = false)`
 
 ### Folder structure
 
@@ -164,7 +160,7 @@ The WordPress system has it owns directory `wp` that are inside `web`. Basically
 
 ### Unit Test
 
-ungarh is prepared work with [WordPress Automated Testing](https://make.wordpress.org/core/handbook/automated-testing/). You have to checkout the `wordpress-develop` repository.
+This project is prepared work with [WordPress Automated Testing](https://make.wordpress.org/core/handbook/automated-testing/). You have to checkout the `wordpress-develop` repository.
 
 ```
 /path/to/ungarh$ svn co https://develop.svn.wordpress.org/trunk/ tests/wp
@@ -178,7 +174,7 @@ WP-Cron is disabled and you have to do a cron job on your machine to get it work
 
 ### WP CLI
 
-ungarh works with [WP-CLI](http://wp-cli.org) just like any other WordPress project would. ungarh includes `wp-cli.yml` configuration file and is configure to run in `web/wp` directory. Use this config file for any further [configuration](http://wp-cli.org/config/).
+This project works with [WP-CLI](http://wp-cli.org) just like any other WordPress project would. ungarh includes `wp-cli.yml` configuration file and is configure to run in `web/wp` directory. Use this config file for any further [configuration](http://wp-cli.org/config/).
 
 You can use [vassh](https://github.com/x-team/vassh) to run WP CLI command outside of Vagrant or use [wp-cli-ssh](https://github.com/x-team/wp-cli-ssh).
 
