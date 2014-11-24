@@ -1,0 +1,21 @@
+{
+  "name": "ungarh",
+  "version": "0.1.0",
+  "authors": [
+    "Johnie Hjelm<johnie@hjelm.im>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1"
+  },
+  "devDependencies": {
+    "fastclick": "~1.0.3"
+  }
+}

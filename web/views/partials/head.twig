@@ -1,7 +1,10 @@
 <!doctype html>
-<html class="no-js" {{ site.language_attributes }}>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE]>           <html class="no-js ie-shit"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{ site.language_attributes }}>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,8 +21,11 @@
     <meta name="msapplication-TileImage" content="path/to/images/icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <title>{{ function('ungarh_title') }}></title>
+    <title>{{ function('ungarh_title') }}</title>
+
+    <meta charset="utf-8">
 
     {{ function('wp_head') }}
-
 </head>
+
+{{ site.title }}

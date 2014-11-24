@@ -1,0 +1,43 @@
+{
+  "name": "ungarorelsehindrade",
+  "version": "1.0.0",
+  "description": "Main site for Unga Rörelsehindrade",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ungarh/ungarorelsehindrade.se.git"
+  },
+  "keywords": [
+    "ungarh",
+    "johnie",
+    "hjelm",
+    "crip.io",
+    "crip"
+  ],
+  "author": "Johnie Hjelm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ungarh/ungarorelsehindrade.se/issues"
+  },
+  "homepage": "https://github.com/ungarh/ungarorelsehindrade.se",
+  "devDependencies": {
+    "gulp": "^3.8.5",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-filter": "^0.5.0",
+    "gulp-if": "^1.2.1",
+    "gulp-imagemin": "~1.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.5.0",
+    "gulp-ruby-sass": "~0.7.0",
+    "gulp-uglify": "^0.3.1",
+    "browser-sync": "~1.5.7",
+    "gulp-header": "~1.1.1",
+    "imagemin-pngcrush": "~1.0.0",
+    "gulp-autoprefixer": "~1.0.1"
+  }
+}
