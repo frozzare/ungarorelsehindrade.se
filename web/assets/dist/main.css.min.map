@@ -1,7 +1,7 @@
 /*!
  * ungarorelsehindrade
- * 
- * 
+ * Main site for Unga Rörelsehindrade
+ * https://github.com/ungarh/ungarorelsehindrade.se
  * @author Johnie Hjelm
  * @version 1.0.0
  * Copyright 2014. ISC licensed.
