@@ -60,11 +60,6 @@ define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . $plugins_path );
 define( 'WP_PLUGIN_URL', WP_HOME . '/' . $plugins_path );
 define( 'PLUGINDIR', WP_CONTENT_DIR . $plugins_path );
 
-/**
- * Stylesheet directory settings
- */
-$stylesheet_path = 'assets/dist';
-define('STYLESHEETPATH', WP_CONTENT_DIR . $stylesheet_path );
 
 /**
  * MU-Plugins directory settings.
