@@ -1,7 +1,23 @@
 <header class="header" role="banner">
   <div class="header__inner container">
     <h1 class="site-title">
-      <a href="{{ function('home_url') }}">{{ site.title }}</a>
+      <a href="{{ function('home_url') }}" title="{{ site.title }}" rel="home">{{ site.title }}</a>
     </h1>
+
+    <nav>
+      <ul class="main-nav">
+        {% for item in main_menu.get_items %}
+          <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+            {% if item.get_children %}
+              <ul class="nav-drop">
+                {% for child in item.get_children %}
+                  <li class="nav-drop-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                {% endfor %}
+              </ul>
+             {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
 </header>

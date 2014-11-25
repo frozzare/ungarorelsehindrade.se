@@ -41,3 +41,12 @@ function site_setup() {
 }
 
 add_action( 'after_theme_setup', 'site_setup' );
+
+/**
+ * Add menus
+ */
+add_filter('timber_context', 'add_to_context');
+function add_to_context($data) {
+  $data['main_menu'] = new TimberMenu("Primary Navigation");
+  return $data;
+}
