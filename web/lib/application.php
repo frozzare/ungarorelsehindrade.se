@@ -17,13 +17,23 @@ date_default_timezone_set( 'Europe/Stockholm' );
  */
 
 if ( ! isset( $content_width ) ) {
-	$content_width = 860;
+	$content_width = 1024;
+}
+
+/**
+ * Register menus
+ */
+add_action( 'after_setup_theme', 'register_my_menus' );
+function register_my_menus() {
+  register_nav_menus( array(
+    'primary' => 'Primary Menu',
+    'footer_menu' => 'Footer Menu'
+  ));
 }
 
 /**
  * Setup the site.
  */
-
 function site_setup() {
 	// Setup language.
 	$domain = 'ungarh';
@@ -38,15 +48,7 @@ function site_setup() {
 
 	// Don't use the default gallery style.
 	add_filter( 'use_default_gallery_style', '__return_false' );
+
 }
 
 add_action( 'after_theme_setup', 'site_setup' );
-
-/**
- * Add menus
- */
-add_filter('timber_context', 'add_to_context');
-function add_to_context($data) {
-  $data['main_menu'] = new TimberMenu("Primary Navigation");
-  return $data;
-}
