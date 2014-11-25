@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+
+.header{
+  background-color: $base-color;
+  @extend .cf;
+  padding: 1em 0;
+}
+
+.site-title{
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: left;
+  @extend .cf;
+
+  a{
+    display: block;
+    width: 300px;
+    height: auto;
+    padding-bottom: 2%;
+    background: transparent url('../images/logo.svg') center center no-repeat;
+    background-size: 100%;
+    text-indent: -9999px;
+  }
+}

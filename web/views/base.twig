@@ -1,7 +1,10 @@
 {% include 'partials/head.twig' %}
-    <body {{ function('body_class') }}>
-        {% block content %}
-        {% endblock %}
-        {% include 'partials/footer.twig' %}
-    </body>
+  <body {{ function('body_class') }}>
+    <div class="page">
+      {% include 'partials/header.twig' %}
+      {% block content %}
+      {% endblock %}
+      {% include 'partials/footer.twig' %}
+    </div><!-- /.page -->
+  </body>
 </html>

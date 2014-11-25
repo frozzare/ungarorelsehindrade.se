@@ -1,18 +1,18 @@
 /*------------------------------------*\
-    INUIT.CSS
+    MAIN.CSS
 \*------------------------------------*/
 /*!*
  *
- * inuitcss.com -- @inuitcss -- @csswizardry
+ * ungarorelsehindrade.se -- @UngaRH -- @JohnieHjelm
  *
  */
 /**
- * inuit.css acts as a base stylesheet which you should extend with your own
+ * ungarh.css acts as a base stylesheet which you should extend with your own
  * theme stylesheet.
  *
- * inuit.css aims to do the heavy lifting; sorting objects and abstractions,
+ * ungarh.css aims to do the heavy lifting; sorting objects and abstractions,
  * design patterns and fiddly bits of CSS, whilst leaving as much design as
- * possible to you. inuit.css is the scaffolding to your decorator.
+ * possible to you. ungarh.css is the scaffolding to your decorator.
  *
  * This stylesheet is heavily documented and contains lots of comments, please
  * take care to read and refer to them as you build. For further support please
@@ -28,11 +28,10 @@
  * able to paste into any view to quickly see how the CSS works in conjunction
  * with the correct HTML.
  *
- * inuit.css is written to this standard: github.com/csswizardry/CSS-Guidelines
  *
  * LICENSE
  *
- * Copyright 2013 Harry Roberts
+ * Copyright 2014 Johnie Hjelm
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +45,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Thank you for choosing inuit.css. May your web fonts render perfectly.
+ * Thank you for choosing ungarh.css. May your web fonts render perfectly.
  */
 
 
@@ -119,10 +118,10 @@
     $WARNING
 \*------------------------------------*/
 /*
- * inuit.css, being an OO framework, works in keeping with the open/closed
+ * ungarh.css, being an OO framework, works in keeping with the open/closed
  * principle. The variables you set previously are now being used throughout
- * inuit.css to style everything we need for a base. Any custom styles SHOULD
- * NOT be added or modified in inuit.css directly, but added via your theme
+ * ungarh.css to style everything we need for a base. Any custom styles SHOULD
+ * NOT be added or modified in ungarh.css directly, but added via your theme
  * stylesheet as per the open/closed principle:
  *
  * csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
@@ -155,7 +154,6 @@
 /**
  * Base styles; unclassed HTML elements etc.
  */
-@import "base/main";
 @import "base/headings";
 @import "base/paragraphs";
 @import "base/smallprint";
@@ -211,3 +209,10 @@
 @import "generic/brand";
 @import "generic/helper";
 @import "generic/debug";
+
+
+/**
+ * Partials and main
+ */
+@import "partials/header";
+@import "base/main";

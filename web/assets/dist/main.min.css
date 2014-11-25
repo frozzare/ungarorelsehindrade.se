@@ -8,20 +8,20 @@
  */
 @charset "UTF-8";
 /*------------------------------------*\
-    INUIT.CSS
+    MAIN.CSS
 \*------------------------------------*/
 /*!*
  *
- * inuitcss.com -- @inuitcss -- @csswizardry
+ * ungarorelsehindrade.se -- @UngaRH -- @JohnieHjelm
  *
  */
 /**
- * inuit.css acts as a base stylesheet which you should extend with your own
+ * ungarh.css acts as a base stylesheet which you should extend with your own
  * theme stylesheet.
  *
- * inuit.css aims to do the heavy lifting; sorting objects and abstractions,
+ * ungarh.css aims to do the heavy lifting; sorting objects and abstractions,
  * design patterns and fiddly bits of CSS, whilst leaving as much design as
- * possible to you. inuit.css is the scaffolding to your decorator.
+ * possible to you. ungarh.css is the scaffolding to your decorator.
  *
  * This stylesheet is heavily documented and contains lots of comments, please
  * take care to read and refer to them as you build. For further support please
@@ -37,11 +37,10 @@
  * able to paste into any view to quickly see how the CSS works in conjunction
  * with the correct HTML.
  *
- * inuit.css is written to this standard: github.com/csswizardry/CSS-Guidelines
  *
  * LICENSE
  *
- * Copyright 2013 Harry Roberts
+ * Copyright 2014 Johnie Hjelm
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +54,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Thank you for choosing inuit.css. May your web fonts render perfectly.
+ * Thank you for choosing ungarh.css. May your web fonts render perfectly.
  */
 /*------------------------------------*\
     $CONTENTS
@@ -118,10 +117,10 @@
     $WARNING
 \*------------------------------------*/
 /*
- * inuit.css, being an OO framework, works in keeping with the open/closed
+ * ungarh.css, being an OO framework, works in keeping with the open/closed
  * principle. The variables you set previously are now being used throughout
- * inuit.css to style everything we need for a base. Any custom styles SHOULD
- * NOT be added or modified in inuit.css directly, but added via your theme
+ * ungarh.css to style everything we need for a base. Any custom styles SHOULD
+ * NOT be added or modified in ungarh.css directly, but added via your theme
  * stylesheet as per the open/closed principle:
  *
  * csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
@@ -139,8 +138,8 @@
     $DEFAULTS
 \*------------------------------------*/
 /**
- * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
- * in the inuit.css-web-template) to override them.
+ * ungarh.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the ungarh.css-web-template) to override them.
  */
 /*------------------------------------*\
     $DEBUG
@@ -189,7 +188,7 @@
  * Note: `$pull` variable above must be set to true before enabling these.
  */
 /**
- * Tell inuit.css when breakpoints start.
+ * Tell ungarh.css when breakpoints start.
  */
 /*------------------------------------*\
     $FONT-SIZES
@@ -229,7 +228,7 @@
     $FRAMEWORK
 \*------------------------------------*/
 /**
- * inuit.css will work these next ones out for use within the framework.
+ * ungarh.css will work these next ones out for use within the framework.
  *
  * Assign our `$base-line-height` to a new spacing var for more transparency.
  */
@@ -325,7 +324,7 @@
  *
  * It’s not great practice to define solid breakpoints up-front, preferring to
  * modify your design when it needs it, rather than assuming you’ll want a
- * change at ‘mobile’. However, as inuit.css is required to take a hands off
+ * change at ‘mobile’. However, as ungarh.css is required to take a hands off
  * approach to design decisions, this is the closest we can get to baked-in
  * responsiveness. It’s flexible enough to allow you to set your own breakpoints
  * but solid enough to be frameworkified.
@@ -843,7 +842,8 @@ textarea:focus {
  * and over in your markup.
  */
 /* line 10, ../generic/_clearfix.scss */
-.cf:after {
+.cf:after, .nav:after, .media:after, .island:after,
+.islet:after, .header:after, .site-title:after {
   content: "";
   display: table;
   clear: both;
@@ -921,16 +921,6 @@ ul, ol, dd {
  * Base styles; unclassed HTML elements etc.
  */
 /*------------------------------------*\
-    $MAIN
-\*------------------------------------*/
-/* line 4, ../base/_main.scss */
-html {
-  font: 1em/1.5 sans-serif;
-  overflow-y: scroll;
-  min-height: 100%;
-}
-
-/*------------------------------------*\
     $HEADINGS
 \*------------------------------------*/
 /**
@@ -987,7 +977,7 @@ h6, .zeta {
  * To target any heading of any level simply apply a class of `.hN`, e.g.:
  *
    <hgroup>
-       <h1 class=hN>inuit.css</h1>
+       <h1 class=hN>ungarh.css</h1>
        <h2 class=hN>Best. Framework. Ever!</h2>
    </hgroup>
  *
@@ -1804,6 +1794,905 @@ label,
 /**
  * Objects and abstractions
  */
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class="grid">
+
+       <div class="grid__item  one-third">
+           <p>One third grid</p>
+       </div><!--
+
+    --><div class="grid__item  two-thirds">
+           <p>Two thirds grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-half">
+           <p>One half grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div>
+
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/CLYUC
+ *
+ */
+/**
+ * Container
+ */
+/* line 40, ../objects/_grids.scss */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/**
+ * Grid wrapper
+ */
+/* line 49, ../objects/_grids.scss */
+.grid {
+  margin-left: -24px;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+/* line 59, ../objects/_grids.scss */
+.grid > .grid {
+  margin-left: 0;
+}
+
+/**
+ * Grid
+ */
+/* line 67, ../objects/_grids.scss */
+.grid__item {
+  display: inline-block;
+  width: 100%;
+  padding-left: 24px;
+  vertical-align: top;
+}
+
+/*------------------------------------*\
+    $FLEXBOX
+\*------------------------------------*/
+/**
+ * Until we can utilise flexbox natively we can kinda, sorta, attempt to emulate
+ * it, in a way... e.g.:
+ *
+   <header class=flexbox>
+
+       <div class=flexbox__item>
+           <b>Welcome to</b>
+       </div>
+
+       <div class=flexbox__item>
+           <img src="//csswizardry.com/inuitcss/img/logo.jpg" alt="ungarh.css">
+       </div>
+
+   </header>
+ *
+ * We can also combine our grid system classes with `.flexbox__item` classes,
+ * e.g.:
+ *
+   <div class=flexbox>
+       <div class="flexbox__item  one-quarter">
+       </div>
+       <div class="flexbox__item  three-quarters">
+       </div>
+   </div>
+ *
+ * It’s pretty poorly named I’m afraid, but it works...
+ *
+ * Demo: jsfiddle.net/inuitcss/ufUh2
+ *
+ */
+/* line 37, ../objects/_flexbox.scss */
+.flexbox {
+  display: table;
+  width: 100%;
+}
+
+/**
+ * Nasty hack to circumvent Modernizr conflicts.
+ */
+/* line 45, ../objects/_flexbox.scss */
+html.flexbox {
+  display: block;
+  width: auto;
+}
+
+/* line 50, ../objects/_flexbox.scss */
+.flexbox__item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*------------------------------------*\
+    $COLUMNS
+\*------------------------------------*/
+/**
+ * Here we can set elements in columns of text using CSS3, e.g.:
+ *
+   <p class=text-cols--2>
+ *
+ * Demo: jsfiddle.net/inuitcss/E26Yd
+ *
+ */
+/* line 14, ../objects/_columns.scss */
+.text-cols--2, .text-cols--3, .text-cols--4, .text-cols--5 {
+  -webkit-column-gap: 24px;
+  -moz-column-gap: 24px;
+  -ms-column-gap: 24px;
+  column-gap: 24px;
+}
+
+/* line 17, ../objects/_columns.scss */
+.text-cols--2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  column-count: 2;
+}
+
+/* line 18, ../objects/_columns.scss */
+.text-cols--3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -ms-column-count: 3;
+  column-count: 3;
+}
+
+/* line 19, ../objects/_columns.scss */
+.text-cols--4 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -ms-column-count: 4;
+  column-count: 4;
+}
+
+/* line 20, ../objects/_columns.scss */
+.text-cols--5 {
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  -ms-column-count: 5;
+  column-count: 5;
+}
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ *
+ */
+/* line 21, ../objects/_nav.scss */
+.nav {
+  list-style: none;
+  margin-left: 0;
+}
+/* line 28, ../objects/_nav.scss */
+.nav > li,
+.nav > li > a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+   <ul class="nav  nav--stacked">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+/* line 51, ../objects/_nav.scss */
+.nav--stacked > li {
+  display: list-item;
+}
+/* line 54, ../objects/_nav.scss */
+.nav--stacked > li > a {
+  display: block;
+}
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+/* line 72, ../objects/_nav.scss */
+.nav--banner {
+  text-align: center;
+}
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+/* line 88, ../objects/_nav.scss */
+.nav--block, .options {
+  line-height: 1;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+  white-space: nowrap;
+}
+/* line 97, ../objects/_nav.scss */
+.nav--block > li, .options > li {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+/* line 101, ../objects/_nav.scss */
+.nav--block > li > a, .options > li > a {
+  padding: 12px;
+}
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+/* line 121, ../objects/_nav.scss */
+.nav--fit {
+  display: table;
+  width: 100%;
+}
+/* line 125, ../objects/_nav.scss */
+.nav--fit > li {
+  display: table-cell;
+}
+/* line 128, ../objects/_nav.scss */
+.nav--fit > li > a {
+  display: block;
+}
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+   `<ul class="nav  nav--keywords>`
+ *
+ */
+/* line 145, ../objects/_nav.scss */
+.nav--keywords > li:after {
+  content: "\002C" "\00A0";
+}
+/* line 149, ../objects/_nav.scss */
+.nav--keywords > li:last-child:after {
+  display: none;
+}
+
+/*------------------------------------*\
+    $OPTIONS
+\*------------------------------------*/
+/**
+ * Link-group nav, used for displaying related options. Extends `.nav--block`
+ * but could also extend `.nav--fit`. Extend with colours and ‘current states’
+ * in your theme stylesheet.
+ *
+  <ul class="nav  options">
+      <li><a></a></li>
+      <li><a></a></li>
+      <li><a></a></li>
+      <li><a></a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/vwfaf
+ *
+ */
+/* line 26, ../objects/_options.scss */
+.options > li > a {
+  border: 0 solid #ccc;
+  border-width: 1px;
+  border-left-width: 0;
+}
+/* line 32, ../objects/_options.scss */
+.options > li:first-child > a {
+  border-left-width: 1px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* line 38, ../objects/_options.scss */
+.options > li:last-child > a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+/**
+ * Basic pagination object, extends `.nav`.
+ * Requires some funky commenting to collapse any white-space caused by the
+ * `display:inline-block;` rules.
+ *
+   <ol class="nav  pagination">
+       <li class=pagination__first>First</li>
+       <li class=pagination__prev>Previous</li>
+       <li><a href=/page/1>1</a></li>
+       <li><a href=/page/2>2</a></li>
+       <li class=current><a href=/page/3>3</a></li>
+       <li><a href=/page/4>4</a></li>
+       <li><a href=/page/5>5</a></li>
+       <li class=pagination__next><a href=/page/next>Next</a></li>
+       <li class=pagination__last><a href=/page/last>Last</a></li>
+   </ol>
+ *
+ * Demo: jsfiddle.net/inuitcss/9Y6PU
+ *
+ */
+/* line 26, ../objects/_pagination.scss */
+.pagination {
+  text-align: center;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+}
+
+/* line 34, ../objects/_pagination.scss */
+.pagination > li {
+  padding: 12px;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+/* line 39, ../objects/_pagination.scss */
+.pagination > li > a {
+  padding: 12px;
+  margin: -12px;
+}
+
+/* line 43, ../objects/_pagination.scss */
+.pagination__first a:before {
+  content: "\00AB" "\00A0";
+}
+
+/* line 46, ../objects/_pagination.scss */
+.pagination__last a:after {
+  content: "\00A0" "\00BB";
+}
+
+/*------------------------------------*\
+    $BREADCRUMB
+\*------------------------------------*/
+/**
+ * Simple breadcrumb styling to apply to (ordered) lists. Extends `.nav`, e.g.:
+ *
+   <ol class="nav  breadcrumb">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>The Board</a></li>
+       <li class=current><a href=#>Directors</a></li>
+   </ol>
+ *
+ * Demo: jsfiddle.net/inuitcss/rkAY9
+ *
+ */
+/* line 19, ../objects/_breadcrumb.scss */
+.breadcrumb > li + li:before {
+  content: "\00BB" "\00A0";
+}
+
+/**
+ * For denoting a path-like structure, GitHub style, e.g.:
+ *
+   <ol class="nav  breadcrumb--path">
+       <li class=breadcrumb__root><a href=#>ungarh.css</a></li>
+       <li><a href=#>ungarh.css</a></li>
+       <li><a href=#>partials</a></li>
+       <li class=current><a href=#>objects</a></li>
+   </ol>
+ *
+ */
+/* line 35, ../objects/_breadcrumb.scss */
+.breadcrumb--path > li + li:before {
+  content: "\002F" "\00A0";
+}
+
+/**
+ * Assign a delimiter on the fly through a data attribute, e.g.:
+ *
+   <ol class="nav  breadcrumb">
+       <li><a href=#>Home</a></li>
+       <li data-breadcrumb="|"><a href=#>About</a></li>
+       <li data-breadcrumb="|"><a href=#>The Board</a></li>
+       <li data-breadcrumb="|" class=current><a href=#>Directors</a></li>
+   </ol>
+ *
+ */
+/* line 51, ../objects/_breadcrumb.scss */
+.breadcrumb > li + li[data-breadcrumb]:before {
+  content: attr(data-breadcrumb) " ";
+}
+
+/**
+ * Denote the root of the tree.
+ */
+/* line 59, ../objects/_breadcrumb.scss */
+.breadcrumb__root {
+  font-weight: bold;
+}
+
+/*------------------------------------*\
+    $MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ *
+   <div class=media>
+       <img src=http://placekitten.com/200/300 alt="" class=media__img>
+       <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/cf4Qs
+ *
+ */
+/* line 20, ../objects/_media.scss */
+.media {
+  display: block;
+}
+
+/* line 24, ../objects/_media.scss */
+.media__img {
+  float: left;
+  margin-right: 24px;
+}
+
+/**
+ * Reversed image location (right instead of left).
+ */
+/* line 31, ../objects/_media.scss */
+.media__img--rev {
+  float: right;
+  margin-left: 24px;
+}
+
+/* line 36, ../objects/_media.scss */
+.media__img img,
+.media__img--rev img {
+  display: block;
+}
+
+/* line 41, ../objects/_media.scss */
+.media__body {
+  overflow: hidden;
+}
+
+/* line 44, ../objects/_media.scss */
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * `.img`s in `.islet`s need an appropriately sized margin.
+ */
+/* line 53, ../objects/_media.scss */
+.islet .media__img {
+  margin-right: 12px;
+}
+
+/* line 56, ../objects/_media.scss */
+.islet .media__img--rev {
+  margin-left: 12px;
+}
+
+/*------------------------------------*\
+    $MARGINALIA
+\*------------------------------------*/
+/**
+ * Marginalia are, per definition, notes in the margin of a document. The
+ * `marginalia__body` class can be applied to all kinds of content, like text or
+ * images, and is joined by a width class:
+ *
+   <div class="marginalia">
+       <div class="marginalia__body  desk-one-fifth"></div>
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/AemkH
+ *
+ */
+/* line 18, ../objects/_marginalia.scss */
+.marginalia {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+/**
+ * Wait for a certain breakpoint to trigger ‘proper' marginalia. Up to this point,
+ * marginalia are inline with the other text.
+ */
+@media (min-width: 1024px) {
+  /* line 27, ../objects/_marginalia.scss */
+  .marginalia {
+    position: relative;
+  }
+
+  /* line 31, ../objects/_marginalia.scss */
+  .marginalia__body,
+  .marginalia__body--right {
+    position: absolute;
+  }
+
+  /* line 36, ../objects/_marginalia.scss */
+  .marginalia__body {
+    right: 100%;
+    padding-right: 24px;
+    text-align: right;
+  }
+
+  /**
+   * Align marginalia to the right of the text.
+   */
+  /* line 45, ../objects/_marginalia.scss */
+  .marginalia__body--right {
+    left: 100%;
+    padding-left: 24px;
+    text-align: left;
+  }
+}
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ *
+ */
+/* line 17, ../objects/_island.scss */
+.island,
+.islet {
+  display: block;
+}
+
+/* line 22, ../objects/_island.scss */
+.island {
+  padding: 24px;
+}
+
+/* line 25, ../objects/_island.scss */
+.island > :last-child,
+.islet > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Just like `.island`, only smaller.
+ */
+/* line 34, ../objects/_island.scss */
+.islet {
+  padding: 12px;
+}
+
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+/* line 23, ../objects/_block-list.scss */
+.block-list,
+.block-list > li {
+  border: 0 solid #ccc;
+}
+
+/* line 28, ../objects/_block-list.scss */
+.block-list {
+  list-style: none;
+  margin-left: 0;
+  border-top-width: 1px;
+}
+/* line 33, ../objects/_block-list.scss */
+.block-list > li {
+  border-bottom-width: 1px;
+  padding: 12px;
+}
+
+/* line 38, ../objects/_block-list.scss */
+.block-list__link {
+  display: block;
+  padding: 12px;
+  margin: -12px;
+}
+
+/*------------------------------------*\
+    $BEAUTONS.CSS
+\*------------------------------------*/
+/**
+ * beautons is a beautifully simple button toolkit.
+ *
+ * LICENSE
+ * 
+ * Copyright 2013 Harry Roberts
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*!*
+ * 
+ * @csswizardry -- csswizardry.com/beautons
+ * 
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base button styles.
+ *
+ * 1. Allow us to better style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Stop buttons wrapping and looking broken.
+ * 4. Make buttons inherit font styles.
+ * 5. Force all elements using beautons to appear clickable.
+ * 6. Normalise box model styles.
+ * 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
+ *    there is 1em of space above and below that text. We therefore apply 1em
+ *    of space to the left and right, as padding, to keep consistent spacing.
+ * 8. Basic cosmetics for default buttons. Change or override at will.
+ * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
+ */
+/* line 56, ../objects/_beautons.scss */
+.btn {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  white-space: nowrap;
+  /* [3] */
+  font-family: inherit;
+  /* [4] */
+  font-size: 100%;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  border: none;
+  /* [6] */
+  margin: 0;
+  /* [6] */
+  padding-top: 0;
+  /* [6] */
+  padding-bottom: 0;
+  /* [6] */
+  line-height: 3;
+  /* [7] */
+  padding-right: 1em;
+  /* [7] */
+  padding-left: 1em;
+  /* [7] */
+  border-radius: 4px;
+  /* [8] */
+}
+
+/* line 75, ../objects/_beautons.scss */
+.btn, .btn:hover {
+  text-decoration: none;
+  /* [9] */
+}
+/* line 80, ../objects/_beautons.scss */
+.btn:active, .btn:focus {
+  outline: none;
+}
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+/**
+ * Button size modifiers.
+ *
+ * These all follow the same sizing rules as above; text is 1em, space around it
+ * remains uniform.
+ */
+/* line 99, ../objects/_beautons.scss */
+.btn--small {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 2;
+}
+
+/* line 105, ../objects/_beautons.scss */
+.btn--large {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 4;
+}
+
+/* line 111, ../objects/_beautons.scss */
+.btn--huge {
+  padding-right: 2em;
+  padding-left: 2em;
+  line-height: 5;
+}
+
+/**
+ * These buttons will fill the entirety of their container.
+ *
+ * 1. Remove padding so that widths and paddings don’t conflict.
+ */
+/* line 122, ../objects/_beautons.scss */
+.btn--full {
+  width: 100%;
+  padding-right: 0;
+  /* [1] */
+  padding-left: 0;
+  /* [1] */
+  text-align: center;
+}
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Button font-size modifiers.
+ */
+/* line 139, ../objects/_beautons.scss */
+.btn--alpha {
+  font-size: 3rem;
+}
+
+/* line 143, ../objects/_beautons.scss */
+.btn--beta {
+  font-size: 2rem;
+}
+
+/* line 147, ../objects/_beautons.scss */
+.btn--gamma {
+  font-size: 1rem;
+}
+
+/**
+ * Make the button inherit sizing from its parent.
+ */
+/* line 154, ../objects/_beautons.scss */
+.btn--natural {
+  vertical-align: baseline;
+  font-size: inherit;
+  line-height: inherit;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * Button function modifiers.
+ */
+/**
+ * Positive actions; e.g. sign in, purchase, submit, etc.
+ */
+/* line 179, ../objects/_beautons.scss */
+.btn--positive {
+  background-color: #4A993E;
+  color: #fff;
+}
+
+/**
+ * Negative actions; e.g. close account, delete photo, remove friend, etc.
+ */
+/* line 187, ../objects/_beautons.scss */
+.btn--negative {
+  background-color: #b33630;
+  color: #fff;
+}
+
+/**
+ * Inactive, disabled buttons.
+ * 
+ * 1. Make the button look like normal text when hovered.
+ */
+/* line 197, ../objects/_beautons.scss */
+.btn--inactive,
+.btn--inactive:hover,
+.btn--inactive:active,
+.btn--inactive:focus {
+  background-color: #ddd;
+  color: #777;
+  cursor: text;
+  /* [1] */
+}
+
+/*------------------------------------*\
+    $STYLES
+\*------------------------------------*/
+/**
+ * Button style modifiers.
+ *
+ * 1. Use an overly-large number to ensure completely rounded, pill-like ends.
+ */
+/* line 218, ../objects/_beautons.scss */
+.btn--soft {
+  border-radius: 200px;
+  /* [1] */
+}
+
+/* line 222, ../objects/_beautons.scss */
+.btn--hard {
+  border-radius: 0;
+}
+
 /**
  * Style trumps; helper and brand classes
  */
@@ -1812,7 +2701,7 @@ label,
 \*------------------------------------*/
 /**
  * Sizes in human readable format. These are used in conjunction with other
- * objects and abstractions found in inuit.css, most commonly the grid system
+ * objects and abstractions found in ungarh.css, most commonly the grid system
  * and faux flexbox.
  *
  * We have a mixin to generate our widths and their breakpoint-specific
@@ -2747,7 +3636,7 @@ label,
 /* line 8, ../generic/_brand.scss */
 .brand {
   font-family: Helvetica Neue, sans-serif!important;
-  color: #4a8ec2!important;
+  color: #A6201F!important;
 }
 
 /* line 12, ../generic/_brand.scss */
@@ -2758,7 +3647,7 @@ label,
 /* line 15, ../generic/_brand.scss */
 .brand-color,
 .brand-colour {
-  color: #4a8ec2!important;
+  color: #A6201F!important;
 }
 
 /*------------------------------------*\
@@ -3219,3 +4108,42 @@ label,
   }
 }
 /* endif */
+/**
+ * Partials and main
+ */
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+/* line 5, ../partials/_header.scss */
+.header {
+  background-color: #f0f0f0;
+  padding: 1em 0;
+}
+
+/* line 11, ../partials/_header.scss */
+.site-title {
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+/* line 18, ../partials/_header.scss */
+.site-title a {
+  display: block;
+  width: 300px;
+  height: auto;
+  padding-bottom: 2%;
+  background: transparent url("../images/logo.svg") center center no-repeat;
+  background-size: 100%;
+  text-indent: -9999px;
+}
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+/* line 4, ../base/_main.scss */
+html {
+  font: 1em/1.5 sans-serif;
+  overflow-y: scroll;
+  min-height: 100%;
+}

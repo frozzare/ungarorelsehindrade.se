@@ -2,8 +2,8 @@
     $DEFAULTS
 \*------------------------------------*/
 /**
- * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
- * in the inuit.css-web-template) to override them.
+ * ungarh.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the ungarh.css-web-template) to override them.
  */
 
 
@@ -54,6 +54,7 @@ $base-font-family:  sans-serif!default;
  * Default colour for objects’ borders etc.
  */
 $base-ui-color:     #ccc!default;
+$base-color:        #f0f0f0!default;
 
 
 
@@ -98,7 +99,7 @@ $portable-pull:     false!default;
 $desk-pull:         false!default;
 
 /**
- * Tell inuit.css when breakpoints start.
+ * Tell ungarh.css when breakpoints start.
  */
 $lap-start:         481px!default;
 $desk-start:        1024px!default;
@@ -165,7 +166,7 @@ $close-quote:   null;
 /**
  * Brand stuff
  */
-$brand-color:       #4a8ec2!default;
+$brand-color:       #A6201F!default;
 $brand-face:        "Helvetica Neue", sans-serif!default;
 
 /**
@@ -183,17 +184,17 @@ $brand-round:        4px!default;
 /**
  * Which objects and abstractions would you like to use?
  */
-$use-grids:         false!default;
-$use-flexbox:       false!default;
-$use-columns:       false!default;
-$use-nav:           false!default;
-$use-options:       false!default;
-$use-pagination:    false!default;
-$use-breadcrumb:    false!default;
-$use-media:         false!default;
-$use-marginalia:    false!default;
-$use-island:        false!default;
-$use-block-list:    false!default;
+$use-grids:         true!default;
+$use-flexbox:       true!default;
+$use-columns:       true!default;
+$use-nav:           true!default;
+$use-options:       true!default;
+$use-pagination:    true!default;
+$use-breadcrumb:    true!default;
+$use-media:         true!default;
+$use-marginalia:    true!default;
+$use-island:        true!default;
+$use-block-list:    true!default;
 $use-matrix:        false!default;
 $use-split:         false!default;
 $use-this-or-this:  false!default;
@@ -202,7 +203,7 @@ $use-flyout:        false!default;
 $use-arrows:        false!default;
 $use-sprite:        false!default;
 $use-icon-text:     false!default;
-$use-beautons:      false!default;
+$use-beautons:      true!default;
 $use-lozenges:      false!default;
 $use-rules:         false!default;
 $use-stats:         false!default;
@@ -216,7 +217,7 @@ $use-greybox:       false!default;
     $FRAMEWORK
 \*------------------------------------*/
 /**
- * inuit.css will work these next ones out for use within the framework.
+ * ungarh.css will work these next ones out for use within the framework.
  *
  * Assign our `$base-line-height` to a new spacing var for more transparency.
  */

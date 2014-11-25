@@ -9,7 +9,7 @@
     Required plugins
 
 -------------------------------------------------------------------*/
- 
+
 var
   gulp        = require('gulp'),
   package     = require('./package.json'),
@@ -27,14 +27,14 @@ var
   prefix      = require('gulp-autoprefixer'),
   pngcrush    = require('imagemin-pngcrush'),
   reload      = browserSync.reload;
- 
+
 /*-------------------------------------------------------------------
- 
+
   1. Configuration
   Base paths
- 
+
 -------------------------------------------------------------------*/
- 
+
 var basePaths = {
   assets: {
     dist: 'assets/dist/'
@@ -51,35 +51,35 @@ var basePaths = {
     dist: 'assets/dist/'
   },
   php: {
-    base: './',
-    dist: './'
+    base: './lib/**',
+    dist: './lib/**'
   },
   twig: {
-    base: './',
-    dist: './'
+    base: './views/**',
+    dist: './views/**'
   },
   html: {
-    base: './',
-    dist: './'
+    base: './controllers/**',
+    dist: './controllers/**'
   },
   images: {
     base: 'assets/images/',
     dist: 'assets/images/'
   },
 };
- 
+
 /*-------------------------------------------------------------------
- 
+
   2. Application paths
- 
+
 -------------------------------------------------------------------*/
- 
+
 var appFiles = {
   versioning: [
     './package.json',
     './bower.json'
   ],
- 
+
   scripts: basePaths.scripts.base + '*.js',
   scss: basePaths.scss.base + '**/*.scss',
   html: basePaths.php.base + '**/*.php',
@@ -87,13 +87,13 @@ var appFiles = {
   html: basePaths.html.base + '**/*.html',
   images: basePaths.images.base + '**/*'
 };
- 
+
 /*-------------------------------------------------------------------
- 
+
   Banner using meta data from package.json
- 
+
 -------------------------------------------------------------------*/
- 
+
 var banner = [
   '/*!\n' +
   ' * <%= package.name %>\n' +
@@ -105,13 +105,13 @@ var banner = [
   ' */',
   '\n'
 ].join('');
- 
+
 /*-------------------------------------------------------------------
- 
+
     Tasks
- 
+
 -------------------------------------------------------------------*/
- 
+
 // Clean /dist folder
 gulp.task('clean:before', function() {
   return gulp.src(
@@ -121,7 +121,7 @@ gulp.task('clean:before', function() {
       force: true
     }))
 });
- 
+
 // Compile, concat and Uglify Javascript
 gulp.task('scripts', function() {
   return gulp.src([
@@ -148,7 +148,7 @@ gulp.task('scripts', function() {
       basePaths.scripts.dist
     ))
 });
- 
+
 // Handle images with imagemin and pngcrush
 gulp.task('images', function() {
   return gulp.src(appFiles.images)
@@ -164,7 +164,7 @@ gulp.task('images', function() {
     ))
   browserSync.reload();
 });
- 
+
 // Compile Sass with Ruby-Sass, compressed format without line numbers. Console log errors.
 gulp.task('sass', function() {
   return gulp.src(appFiles.scss)
@@ -190,7 +190,7 @@ gulp.task('sass', function() {
       stream: true
     }));
 });
- 
+
 // Browser sync using proxy vhost, open in Google Chrome. Use port 5000. Don't output default Browser Sync notify alerts
 gulp.task('browser-sync', function() {
   browserSync({
@@ -198,42 +198,41 @@ gulp.task('browser-sync', function() {
     browser: "google chrome",
     port: 5000,
     notify: false,
-    files: ['./vendor/**', './views/**', './controllers/**', './lib/**', './assets/**'],
     exclude: ['./wp/*']
   });
 });
- 
+
 // Browser sync reload
 gulp.task('bs-reload', function() {
   browserSync.reload();
 });
- 
+
 // Task: Watch files
 gulp.task('watch', function() {
- 
+
   // Watch scripts
   gulp.watch(appFiles.scripts, ['scripts', browserSync.reload]);
- 
+
   // Watch Sass
   gulp.watch(appFiles.scss, ['sass']);
- 
+
   // Watch PHP, and reload browser
   gulp.watch(appFiles.php, ['bs-reload']);
 
   // Watch Twig, and reload browser
   gulp.watch(appFiles.twig, ['bs-reload']);
- 
+
   // Watch HTML, and reload browser
   gulp.watch(appFiles.html, ['bs-reload']);
- 
+
 });
- 
+
 /*-------------------------------------------------------------------
- 
+
     Main tasks
- 
+
 -------------------------------------------------------------------*/
- 
+
 // Default. Just runs once.
 // Type 'gulp' in the terminal
 gulp.task('default', ['clean:before'], function() {
@@ -243,8 +242,8 @@ gulp.task('default', ['clean:before'], function() {
     'scripts'
   );
 });
- 
- 
+
+
 // Production process. Watch, inject, and reload.
 // Type 'gulp serve' in the terminal
 gulp.task('serve', ['clean:before'], function() {
