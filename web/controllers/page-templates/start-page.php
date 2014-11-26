@@ -1,6 +1,6 @@
 <?php
 
-public class Start_Page_Type extends Papi_Page_Type {
+class Start_Page_Type extends Papi_Page_Type {
 
   /**
    * The page type meta options.
@@ -11,7 +11,7 @@ public class Start_Page_Type extends Papi_Page_Type {
   public function page_type () {
     return [
       'name'        => 'Startsida',
-      'description' => 'Första sidan man ser',
+      'description' => 'Landningsidan för Unga Rörelsehindrade',
       'template'    => 'page-templates/start-page.php'
     ];
   }
