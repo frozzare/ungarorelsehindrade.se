@@ -22,6 +22,18 @@
           "fancyguy/webroot-installer": "1.1.0"
         }
       }
+    },
+    {
+      "type":"package",
+      "package": {
+        "name": "wp-papi/papi",
+        "version":"1.0.0",
+        "source": {
+          "url": "https://github.com/wp-papi/papi.git",
+          "type": "git",
+          "reference":"1.0.0"
+        }
+      }
     }
   ],
   "require": {
@@ -29,14 +41,14 @@
     "composer/installers": "v1.0.12",
     "wordpress/wordpress": "4.0.0",
     "fancyguy/webroot-installer": "1.1.0",
-    "wpackagist-plugin/timber-library": ">=0.20.6"
+    "wp-papi/papi": "1.0.0"
   },
   "config": {
     "preferred-install": "dist"
   },
   "extra": {
     "installer-paths": {
-      "web/lib/timber": ["wpackagist-plugin/timber-library"],
+      "web/lib/papi": ["wp-papi/papi"],
       "web/vendor/plugins/{$name}/": ["type:wordpress-plugin"]
     },
     "webroot-dir": "web/wp",

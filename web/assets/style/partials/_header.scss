@@ -2,12 +2,21 @@
     $HEADER
 \*------------------------------------*/
 
+
+/**
+ * Header
+ */
 .header{
   background-color: $base-color;
   @extend .cf;
   padding: 1em 0;
 }
 
+
+
+/**
+ * Site name and logo
+ */
 .site-title{
   display: block;
   margin: 0;
@@ -23,5 +32,18 @@
     background: transparent url('../images/logo.svg') center center no-repeat;
     background-size: 100%;
     text-indent: -9999px;
+  }
+}
+
+
+/**
+ * Main nav
+ */
+.main-nav{
+  float: right;
+  @extend .cf;
+
+  ul{
+    margin: 0;
   }
 }

@@ -30,3 +30,6 @@ foreach ($ungarh_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Papi
+register_page_types_directory( dirname(__FILE__) . '/page-templates');

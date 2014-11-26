@@ -843,7 +843,7 @@ textarea:focus {
  */
 /* line 10, ../generic/_clearfix.scss */
 .cf:after, .nav:after, .media:after, .island:after,
-.islet:after, .header:after, .site-title:after {
+.islet:after, .header:after, .site-title:after, .main-nav:after {
   content: "";
   display: table;
   clear: both;
@@ -3635,13 +3635,13 @@ html.flexbox {
  */
 /* line 8, ../generic/_brand.scss */
 .brand {
-  font-family: Helvetica Neue, sans-serif!important;
+  font-family: Open Sans, HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, arial, sans-serif!important;
   color: #A6201F!important;
 }
 
 /* line 12, ../generic/_brand.scss */
 .brand-face {
-  font-family: Helvetica Neue, sans-serif!important;
+  font-family: Open Sans, HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, arial, sans-serif!important;
 }
 
 /* line 15, ../generic/_brand.scss */
@@ -4114,20 +4114,26 @@ html.flexbox {
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
-/* line 5, ../partials/_header.scss */
+/**
+ * Header
+ */
+/* line 9, ../partials/_header.scss */
 .header {
   background-color: #f0f0f0;
   padding: 1em 0;
 }
 
-/* line 11, ../partials/_header.scss */
+/**
+ * Site name and logo
+ */
+/* line 20, ../partials/_header.scss */
 .site-title {
   display: block;
   margin: 0;
   padding: 0;
   float: left;
 }
-/* line 18, ../partials/_header.scss */
+/* line 27, ../partials/_header.scss */
 .site-title a {
   display: block;
   width: 300px;
@@ -4138,12 +4144,24 @@ html.flexbox {
   text-indent: -9999px;
 }
 
+/**
+ * Main nav
+ */
+/* line 42, ../partials/_header.scss */
+.main-nav {
+  float: right;
+}
+/* line 46, ../partials/_header.scss */
+.main-nav ul {
+  margin: 0;
+}
+
 /*------------------------------------*\
     $MAIN
 \*------------------------------------*/
 /* line 4, ../base/_main.scss */
 html {
-  font: 1em/1.5 sans-serif;
+  font: 1em/1.5 "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   overflow-y: scroll;
   min-height: 100%;
 }

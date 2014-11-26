@@ -1,0 +1,120 @@
+// Seamless mode
+
+.papi-mode-seamless-tabs {
+  > h3,
+  > .handlediv {
+    display: none;
+  }
+}
+
+// Tabs wrapper
+
+.papi-tabs-wrapper {
+
+  float: left;
+  width: 100%;
+
+  .papi-tabs-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #f4f2f2;
+    width: 146px;
+    border-right: 1px solid #dfdfdf;
+  }
+
+  .papi-tabs {
+    background: #f4f2f2;
+    line-height: 22px;
+    float: left;
+    width: 144px;
+    margin: 0;
+    position: relative;
+    padding: 0 0 10px;
+    margin: -7px 0 -12px -10px;
+    border-right: 1px solid #dedede;
+    border-top: 1px solid #eaeaea;
+
+    li {
+      &:first-child {
+        &.active {
+          a {
+            border-top: 1px solid transparent;
+          }
+        }
+      }
+
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      a {
+        padding: 10px;
+        line-height: 18px;
+        margin: 0 0 0 -1px;
+        display: block;
+        background: #f4f2f2;
+        text-decoration: none;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid #eaeaea;
+        font-weight: bold;
+        color: #899194;
+
+        img {
+          float: left;
+          padding: 0 5px;
+          width: 13px;
+          height: 13px;
+          margin-top: 2px;
+        }
+      }
+
+      &.active {
+        a {
+          border-color: #dedede;
+          border-top: 1px solid transparent;
+          position: relative;
+          background-color: #f9f9f9;
+          color: #333333;
+          margin: 0 -1px 0 -1px;
+        }
+      }
+    }
+  }
+
+  .papi-tabs-table-back {
+    background: #F9F9F9;
+    position: absolute;
+    width: 252px;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #EAEAEA;
+  }
+
+  .papi-tabs-content {
+    padding-left: 10px;
+    margin-left: 145px;
+    position: relative;
+
+    > div {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      .papi-table {
+        margin: -7px 0 -12px -20px;
+        min-height: 100%;
+        tr td:first-child {
+          width: 75px;
+          label {
+            padding-left: 2px;
+          }
+        }
+      }
+    }
+  }
+}

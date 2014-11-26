@@ -1,0 +1,38 @@
+.papi-property-image {
+
+  li {
+    width: 150px;
+    float: left;
+    margin: 0 20px 20px 0;
+
+    img {
+      height: auto;
+      left: 0;
+      top: 0;
+      width: 100%;
+      -webkit-transform: translateZ(0);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+    }
+
+    a {
+      width: 16px;
+      height: 22px;
+      background: #000;
+      position: absolute;
+      border-radius: 15px;
+      color: #FFF;
+      text-decoration: none;
+      padding-top: 2px;
+      padding-left: 9px;
+      font-size: 14px;
+      text-transform: lowercase;
+      margin-left: 138px;
+      margin-top: -10px;
+      display: none;
+      z-index: 100;
+    }
+
+  }
+
+}

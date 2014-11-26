@@ -1,0 +1,84 @@
+.papi-property-relationship {
+  background: #fafafa;
+  border: 1px #eaeaea solid;
+
+  .relationship-inner {
+    padding: 5px;
+
+    .relationship-top-left {
+      width: 49%;
+      max-width: 49%;
+      padding: 10px 0px;
+      float: left;
+
+      input[type="search"] {
+        width: 100%;
+        padding: 5px;
+      }
+
+    }
+
+    .relationship-top-right {
+      width: 49%;
+      max-width: 49%;
+      float: right;
+      padding: 10px 0px;
+    }
+
+    .relationship-left {
+      float: left;
+      width: 49%;
+      max-width: 49%;
+      border: 1px #eaeaea solid;
+      background: #fff;
+      min-height: 250px;
+      height: 250px;
+      max-height: 250px;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    .relationship-right {
+      float: right;
+      width: 49%;
+      max-width: 49%;
+      border: 1px #eaeaea solid;
+      background: #fff;
+      min-height: 250px;
+      height: 250px;
+      max-height: 250px;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    ul {
+      margin: 0;
+      padding: 5px 0;
+
+      li {
+        border-bottom: 1px #eaeaea solid;
+        padding: 5px 10px 10px 5px;
+        cursor: pointer;
+
+        span.icon {
+          background: url(../img/plus-minus.png) no-repeat top left;
+          width: 16px;
+          height: 16px;
+          float: right;
+          cursor: pointer;
+          &.minus {
+            background-position: top right;
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}
