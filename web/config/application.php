@@ -1,6 +1,6 @@
 <?php
 
-$root_dir = dirname( dirname( __FILE__ ) ) . '/web';
+$root_dir = dirname( dirname(__FILE__) );
 
 /**
  * Load right environment if we don't is in the unit test environment

@@ -22,14 +22,6 @@ function ungarh_change_login_errors( $content ) {
 add_filter( 'login_errors', 'ungarh_change_login_errors' );
 
 /**
- * Shortcut function for WordPress site title.
- */
-
-function ungarh_title() {
-	bloginfo( 'name' ) ?> | <?php is_home() ? bloginfo( 'description' ) : wp_title( '|', true, 'right' );
-}
-
-/**
  * Change the upload path.
  *
  * @since 1.0.0

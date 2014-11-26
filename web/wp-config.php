@@ -5,6 +5,12 @@
  * This file is required in the root directory so WordPress can find it.
  */
 
-require_once(dirname(__DIR__) . '/vendor/autoload.php');
-require_once(dirname(__DIR__) . '/config/application.php');
+/**
+ * Autoload
+ */
+$autoload_file = dirname(__FILE__) . '/vendor/autoload.php';
+if (file_exists($env_config)) {
+  require_once($autoload_file);
+}
+require_once(dirname(__FILE__) . '/config/application.php');
 require_once(ABSPATH . 'wp-settings.php');
