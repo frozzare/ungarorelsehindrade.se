@@ -23,7 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 $plugins   = array(
-	'timber',
 	'ungarh'
 );
 

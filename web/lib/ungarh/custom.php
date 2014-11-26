@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function ungarh_change_login_errors( $content ) {
 	// Fixes so you can't guess the username.
-	return "<strong><?php _e('ERROR', 'ungarh'); ?></strong><?php _e('You have entered incorrect login details', 'ungarh'); ?>";
+	return "<strong><?php _e('ERROR', 'ungarh'); ?></strong><?php _e('Du har fyllt i fel inloggningsuppgifter.', 'ungarh'); ?>";
 }
 
 add_filter( 'login_errors', 'ungarh_change_login_errors' );
