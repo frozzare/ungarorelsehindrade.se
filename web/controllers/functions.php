@@ -32,4 +32,6 @@ foreach ($ungarh_includes as $file) {
 unset($file, $filepath);
 
 // Papi
-register_page_types_directory( dirname(__FILE__) . '/page-templates');
+if (function_exists('register_page_types_directory')) {
+  register_page_types_directory( dirname(__FILE__) . '/page-templates');
+}
