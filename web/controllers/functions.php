@@ -18,8 +18,9 @@ $ungarh_includes = array(
   'lib/titles.php',          // Page titles
   'lib/nav.php',             // Custom nav modifications
   'lib/gallery.php',         // Custom [gallery] modifications
-  // 'lib/scripts.php',         // Scripts and stylesheets
+  // 'lib/scripts.php',      // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
+  'lib/posttypes.php',       // Custom post types
 );
 
 foreach ($ungarh_includes as $file) {
@@ -40,7 +41,7 @@ if (function_exists('register_page_types_directory')) {
 
 function site_change_papi_options( $options ) {
   return array_merge($options, [
-    'post_type_page_only_page_type' => 'start-page'
+    'post_type_start_sida_show_standard_page' => false
   ]);
 }
 
