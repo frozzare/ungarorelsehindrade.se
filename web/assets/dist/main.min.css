@@ -4232,7 +4232,7 @@ html.flexbox {
 .pier {
   display: block;
   background-color: #A6201F;
-  margin-bottom: 2em;
+  margin-bottom: 3.5em;
 }
 
 /* line 40, ../partials/_home.scss */
@@ -4246,7 +4246,7 @@ html.flexbox {
 .pier__card {
   background-color: #fff;
   text-align: center;
-  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
   padding: 2.5em 3em;
 }
 /* line 52, ../partials/_home.scss */
@@ -4275,6 +4275,82 @@ html.flexbox {
 /* line 76, ../partials/_home.scss */
 .pier__nav li:last-child {
   border-bottom: 1px solid #aaa;
+}
+
+/**
+ * News
+ */
+/* line 87, ../partials/_home.scss */
+.news {
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+/* line 92, ../partials/_home.scss */
+.news-title {
+  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+}
+
+/* line 98, ../partials/_home.scss */
+.news__inner {
+  border: 5px solid #A6201F;
+  padding: 3em;
+}
+/* line 102, ../partials/_home.scss */
+.news__inner .post {
+  margin-bottom: 2.5em;
+  padding-bottom: 2.5em;
+  border-bottom: 5px solid #aaa;
+}
+/* line 107, ../partials/_home.scss */
+.news__inner .post:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+/* line 114, ../partials/_home.scss */
+.news__inner .entry-title {
+  font-weight: normal;
+}
+/* line 117, ../partials/_home.scss */
+.news__inner .entry-title a {
+  color: #1D2327;
+}
+/* line 120, ../partials/_home.scss */
+.news__inner .entry-title a:hover {
+  color: #A6201F;
+}
+/* line 126, ../partials/_home.scss */
+.news__inner .entry-summary {
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+}
+/* line 132, ../partials/_home.scss */
+.news__inner .entry-meta {
+  color: #aaa;
+}
+/* line 135, ../partials/_home.scss */
+.news__inner .entry-meta .byline,
+.news__inner .entry-meta .updated {
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+/* line 143, ../partials/_home.scss */
+.news__inner .entry-meta .byline {
+  margin: 0;
+}
+/* line 146, ../partials/_home.scss */
+.news__inner .entry-meta .byline a {
+  color: #aaa;
+}
+/* line 149, ../partials/_home.scss */
+.news__inner .entry-meta .byline a:hover {
+  color: #A6201F;
 }
 
 /*------------------------------------*\

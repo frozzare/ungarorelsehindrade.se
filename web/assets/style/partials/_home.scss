@@ -34,7 +34,7 @@
 .pier{
   display: block;
   background-color: $brand-color;
-  margin-bottom: 2em;
+  margin-bottom: 3.5em;
 }
 
 .pier__inner{
@@ -46,7 +46,7 @@
 .pier__card{
   background-color: #fff;
   text-align: center;
-  box-shadow: 0 5px 1px rgba(0, 0, 0, .3);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .3);
   padding: 2.5em 3em;
 
   &-title{
@@ -75,5 +75,81 @@
 
   li:last-child{
     border-bottom: 1px solid #aaa;
+  }
+}
+
+
+
+
+/**
+ * News
+ */
+.news{
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.news-title{
+  font-family: $base-font-family;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+}
+
+.news__inner{
+  border: 5px solid $brand-color;
+  padding: 3em;
+
+  .post{
+    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    border-bottom: 5px solid #aaa;
+
+    &:last-of-type{
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .entry-title{
+    font-weight: normal;
+
+    a{
+      color: $base-ui-color;
+
+      &:hover{
+        color: $brand-color;
+      }
+    }
+  }
+
+  .entry-summary{
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .entry-meta{
+    color: #aaa;
+
+    .byline,
+    .updated{
+      display: inline-block;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .byline{
+      margin: 0;
+
+      a{
+        color: #aaa;
+
+        &:hover{
+          color: $brand-color;
+        }
+      }
+    }
   }
 }
