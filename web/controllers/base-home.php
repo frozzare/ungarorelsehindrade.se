@@ -12,16 +12,11 @@
     get_template_part('templates/header');
   ?>
 
-  <div class="wrap container" role="document">
+  <div class="wrap" role="document">
     <div class="content row">
       <main class="main" role="main">
         <?php include ungarh_template_path(); ?>
       </main><!-- /.main -->
-      <?php if (ungarh_display_sidebar()) : ?>
-        <aside class="sidebar" role="complementary">
-          <?php include ungarh_sidebar_path(); ?>
-        </aside><!-- /.sidebar -->
-      <?php endif; ?>
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 

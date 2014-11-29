@@ -833,6 +833,21 @@ textarea:focus {
   outline: none;
 }
 
+/**
+ * Links
+ */
+/* line 87, ../generic/_reset.scss */
+a {
+  color: #A6201F;
+  text-decoration: none;
+  -webkit-transition: color .2s ease;
+          transition: color .2s ease;
+}
+/* line 92, ../generic/_reset.scss */
+a:hover, a:focus {
+  color: #d12827;
+}
+
 /*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
@@ -842,7 +857,7 @@ textarea:focus {
  * and over in your markup.
  */
 /* line 10, ../generic/_clearfix.scss */
-.cf:after, .nav:after, .media:after, .island:after,
+.cf:after, .grid:after, .nav:after, .media:after, .island:after,
 .islet:after, .header:after, .site-title:after, .main-nav:after {
   content: "";
   display: table;
@@ -924,24 +939,24 @@ ul, ol, dd {
     $HEADINGS
 \*------------------------------------*/
 /**
- * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
- *
  * When we define a heading we also define a corresponding class to go with it.
  * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
  * heading hierarchy.
  */
-/* line 11, ../base/_headings.scss */
+/* line 9, ../base/_headings.scss */
 h1, .alpha {
   font-size: 36px;
   font-size: 2.25rem;
   line-height: 1.33333;
+  font-family: "Enriqueta", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
-/* line 14, ../base/_headings.scss */
+/* line 13, ../base/_headings.scss */
 h2, .beta {
   font-size: 30px;
   font-size: 1.875rem;
   line-height: 1.6;
+  font-family: "Enriqueta", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
 /* line 17, ../base/_headings.scss */
@@ -949,23 +964,24 @@ h3, .gamma {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1;
+  font-family: "Enriqueta", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
-/* line 20, ../base/_headings.scss */
+/* line 21, ../base/_headings.scss */
 h4, .delta {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2;
 }
 
-/* line 23, ../base/_headings.scss */
+/* line 24, ../base/_headings.scss */
 h5, .epsilon {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* line 26, ../base/_headings.scss */
+/* line 27, ../base/_headings.scss */
 h6, .zeta {
   font-size: 14px;
   font-size: 0.875rem;
@@ -982,7 +998,7 @@ h6, .zeta {
    </hgroup>
  *
  */
-/* line 43, ../base/_headings.scss */
+/* line 44, ../base/_headings.scss */
 hgroup .hN {
   margin-bottom: 0;
 }
@@ -991,21 +1007,21 @@ hgroup .hN {
  * A series of classes for setting massive type; for use in heroes, mastheads,
  * promos, etc.
  */
-/* line 52, ../base/_headings.scss */
+/* line 53, ../base/_headings.scss */
 .giga {
   font-size: 96px;
   font-size: 6rem;
   line-height: 1;
 }
 
-/* line 55, ../base/_headings.scss */
+/* line 56, ../base/_headings.scss */
 .mega {
   font-size: 72px;
   font-size: 4.5rem;
   line-height: 1;
 }
 
-/* line 58, ../base/_headings.scss */
+/* line 59, ../base/_headings.scss */
 .kilo {
   font-size: 48px;
   font-size: 3rem;
@@ -1576,7 +1592,7 @@ td {
 /* line 128, ../base/_tables.scss */
 .table--bordered th,
 .table--bordered td {
-  border: 1px solid #ccc;
+  border: 1px solid #1D2327;
 }
 /* line 132, ../base/_tables.scss */
 .table--bordered th:empty,
@@ -1849,7 +1865,7 @@ label,
 /**
  * Very infrequently occuring grid wrappers as children of grid wrappers.
  */
-/* line 59, ../objects/_grids.scss */
+/* line 60, ../objects/_grids.scss */
 .grid > .grid {
   margin-left: 0;
 }
@@ -1857,9 +1873,10 @@ label,
 /**
  * Grid
  */
-/* line 67, ../objects/_grids.scss */
+/* line 68, ../objects/_grids.scss */
 .grid__item {
-  display: inline-block;
+  display: block;
+  float: left;
   width: 100%;
   padding-left: 24px;
   vertical-align: top;
@@ -2131,7 +2148,7 @@ html.flexbox {
  */
 /* line 26, ../objects/_options.scss */
 .options > li > a {
-  border: 0 solid #ccc;
+  border: 0 solid #1D2327;
   border-width: 1px;
   border-left-width: 0;
 }
@@ -2446,7 +2463,7 @@ html.flexbox {
 /* line 23, ../objects/_block-list.scss */
 .block-list,
 .block-list > li {
-  border: 0 solid #ccc;
+  border: 0 solid #1D2327;
 }
 
 /* line 28, ../objects/_block-list.scss */
@@ -4121,19 +4138,20 @@ html.flexbox {
 .header {
   background-color: #f0f0f0;
   padding: 1em 0;
+  margin-bottom: 2em;
 }
 
 /**
  * Site name and logo
  */
-/* line 20, ../partials/_header.scss */
+/* line 21, ../partials/_header.scss */
 .site-title {
   display: block;
   margin: 0;
   padding: 0;
   float: left;
 }
-/* line 27, ../partials/_header.scss */
+/* line 28, ../partials/_header.scss */
 .site-title a {
   display: block;
   width: 300px;
@@ -4147,13 +4165,116 @@ html.flexbox {
 /**
  * Main nav
  */
-/* line 42, ../partials/_header.scss */
+/* line 43, ../partials/_header.scss */
 .main-nav {
   float: right;
+  padding-top: 15px;
 }
-/* line 46, ../partials/_header.scss */
+/* line 48, ../partials/_header.scss */
 .main-nav ul {
   margin: 0;
+}
+/* line 52, ../partials/_header.scss */
+.main-nav li {
+  padding-left: 1.5em;
+}
+/* line 56, ../partials/_header.scss */
+.main-nav a {
+  line-height: 1.5em;
+  color: #1D2327;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-color .2s ease;
+          transition: border-color .2s ease;
+}
+/* line 65, ../partials/_header.scss */
+.main-nav a:hover {
+  border-bottom: 2px solid #1D2327;
+}
+
+/*------------------------------------*\
+    $HOME
+\*------------------------------------*/
+/* line 5, ../partials/_home.scss */
+.ungarh-slogan {
+  line-height: 1.5;
+  font-family: "Enriqueta", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-weight: normal;
+  margin-bottom: 1.5em;
+}
+
+/* line 12, ../partials/_home.scss */
+.jumbotron {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+/* line 19, ../partials/_home.scss */
+.jump-link {
+  font-size: 10px;
+  display: block;
+  width: 5em;
+  height: 5em;
+  text-indent: -9999px;
+  background: transparent url("../images/arrow.svg") center center no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+/**
+ * Pier
+ */
+/* line 34, ../partials/_home.scss */
+.pier {
+  display: block;
+  background-color: #A6201F;
+  margin-bottom: 2em;
+}
+
+/* line 40, ../partials/_home.scss */
+.pier__inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 4em 0;
+}
+
+/* line 46, ../partials/_home.scss */
+.pier__card {
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.3);
+  padding: 2.5em 3em;
+}
+/* line 52, ../partials/_home.scss */
+.pier__card-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+/* line 60, ../partials/_home.scss */
+.pier__nav ul {
+  margin: 0;
+}
+/* line 64, ../partials/_home.scss */
+.pier__nav a {
+  color: #505050;
+  border-top: 1px solid #aaa;
+  line-height: 3;
+  text-transform: uppercase;
+  font-family: "Enriqueta", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+/* line 71, ../partials/_home.scss */
+.pier__nav a:hover {
+  color: #A6201F;
+}
+/* line 76, ../partials/_home.scss */
+.pier__nav li:last-child {
+  border-bottom: 1px solid #aaa;
 }
 
 /*------------------------------------*\

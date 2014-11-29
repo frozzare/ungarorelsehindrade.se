@@ -10,6 +10,7 @@
   background-color: $base-color;
   @extend .cf;
   padding: 1em 0;
+  margin-bottom: 2em;
 }
 
 
@@ -42,8 +43,27 @@
 .main-nav{
   float: right;
   @extend .cf;
+  padding-top: 15px;
 
   ul{
     margin: 0;
+  }
+
+  li{
+    padding-left: 1.5em;
+  }
+
+  a{
+    line-height: 1.5em;
+    color: $base-ui-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s ease;
+
+    &:hover{
+      border-bottom: 2px solid $base-ui-color;
+    }
   }
 }

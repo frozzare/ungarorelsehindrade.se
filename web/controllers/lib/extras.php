@@ -3,7 +3,7 @@
  * Clean up the_excerpt()
  */
 function ungarh_excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'ungarh') . '</a>';
+  return ' &hellip; <a href="' . get_permalink() . '">' . __('Fortsätt läsa ›', 'ungarh') . '</a>';
 }
 add_filter('excerpt_more', 'ungarh_excerpt_more');
 

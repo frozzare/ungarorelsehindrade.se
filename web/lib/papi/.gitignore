@@ -1,7 +1,0 @@
-.idea
-#gui/css/style.css
-#gui/js/main.js
-node_modules
-test.php
-coverage/
-*.bak

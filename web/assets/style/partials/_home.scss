@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    $HOME
+\*------------------------------------*/
+
+.ungarh-slogan{
+  line-height: 1.5;
+  font-family: $alt-font-family;
+  font-weight: normal;
+  margin-bottom: 1.5em;
+}
+
+.jumbotron{
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+.jump-link{
+  font-size: 10px;
+  display: block;
+  width: 5em;
+  height: 5em;
+  text-indent: -9999px;
+  background: transparent url('../images/arrow.svg') center center no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+
+/**
+ * Pier
+ */
+.pier{
+  display: block;
+  background-color: $brand-color;
+  margin-bottom: 2em;
+}
+
+.pier__inner{
+  max-width: $desk-start;
+  margin: 0 auto;
+  padding: 4em 0;
+}
+
+.pier__card{
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, .3);
+  padding: 2.5em 3em;
+
+  &-title{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+}
+
+.pier__nav{
+  ul{
+    margin: 0;
+  }
+
+  a{
+    color: #505050;
+    border-top: 1px solid #aaa;
+    line-height: 3;
+    text-transform: uppercase;
+    font-family: $alt-font-family;
+
+    &:hover{
+      color: $brand-color;
+    }
+  }
+
+  li:last-child{
+    border-bottom: 1px solid #aaa;
+  }
+}

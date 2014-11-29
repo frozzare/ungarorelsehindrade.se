@@ -78,3 +78,19 @@ option{
         cursor:text;
         outline:none;
     }
+
+
+
+/**
+ * Links
+ */
+a{
+  color: $brand-color;
+  text-decoration: none;
+  transition: color .2s ease;
+
+  &:hover,
+  &:focus{
+    color: lighten($brand-color, 10%);
+  }
+}
