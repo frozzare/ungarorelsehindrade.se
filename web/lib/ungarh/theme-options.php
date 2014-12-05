@@ -74,7 +74,7 @@ function _urh_save_theme_options() {
  * @return mixed
  */
 
-function urh_get_theme_option( $key, $default ) {
+function urh_get_theme_option( $key, $default ='' ) {
 	$prefix = _urh_get_theme_options_prefix();
 	return get_option( $prefix . $key, $default );
 }
