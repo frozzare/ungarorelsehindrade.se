@@ -2,8 +2,8 @@
 
 <?php get_template_part('templates/pier'); ?>
 
-<div class="news container">
-  <h3 class="news-title"><?php _e( "Nyheter", "ungarh" ); ?></h3>
+<div class="news container" id="nyheter">
+  <h2 class="news-title"><?php _e( "Nyheter", "ungarh" ); ?></h2>
 
   <div class="news__inner">
     <?php

@@ -4,7 +4,7 @@
  *
  * If any of the is_* conditional tags or is_page_template(template_file) checks return true, the sidebar will NOT be displayed.
  *
- * @link http://ungarh.io/the-ungarh-sidebar/
+ * @link http://ungarorelsehindrade.se
  *
  * @param array list of conditional tags (http://codex.wordpress.org/Conditional_Tags)
  * @param array list of page templates. These will be checked via is_page_template()

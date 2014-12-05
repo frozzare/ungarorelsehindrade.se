@@ -39,5 +39,77 @@ function start_sida() {
     register_post_type( 'start_sida', $args );
 
 }
-// Hook into the 'init' action
-add_action( 'init', 'start_sida', 0 );
+
+
+/**
+ * För Ungdom
+ */
+function for_ungdom() {
+  register_post_type( 'ungdom',
+  // CPT Options
+    array(
+      'labels' => array(
+        'name' => __( 'För Ungdom' ),
+        'all_items' => __( 'Sidor: För Ungdom' ),
+        'singular_name' => __( 'Ungdom' )
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => '')
+    )
+  );
+}
+
+/**
+ * För Politiker
+ */
+function for_politiker() {
+  register_post_type( 'politiker',
+  // CPT Options
+    array(
+      'labels' => array(
+        'name' => __( 'För Politiker' ),
+        'all_items' => __( 'Sidor: För Politiker' ),
+        'singular_name' => __( 'Politiker' )
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => '')
+    )
+  );
+}
+
+/**
+ * För Journalister
+ */
+function for_journalister() {
+  register_post_type( 'journalister',
+  // CPT Options
+    array(
+      'labels' => array(
+        'name' => __( 'För Journalister' ),
+        'all_items' => __( 'Sidor: För Journalister' ),
+        'singular_name' => __( 'Journalister' )
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => '')
+    )
+  );
+}
+
+
+/**
+ * Init all post types
+ */
+$post_types   = array(
+  // 'for_ungdom',
+  // 'for_politiker',
+  // 'for_journalister'
+);
+
+if ( !empty($post_types) ) {
+  foreach ( $post_types as $cpt ) {
+    add_action( 'init', $cpt );
+  }
+}

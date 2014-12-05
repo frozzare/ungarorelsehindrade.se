@@ -47,7 +47,7 @@
   background-color: #fff;
   text-align: center;
   box-shadow: 0 5px 0 rgba(0, 0, 0, .3);
-  padding: 2.5em 3em;
+  padding: 3em;
 
   &-title{
     font-weight: 600;
@@ -56,9 +56,12 @@
   }
 }
 
-.pier__nav{
+.pier__card{
   ul{
     margin: 0;
+    @extend .nav;
+    @extend .nav--stacked;
+    @extend .nav--banner;
   }
 
   a{

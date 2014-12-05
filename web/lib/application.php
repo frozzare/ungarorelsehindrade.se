@@ -17,7 +17,7 @@ date_default_timezone_set( 'Europe/Stockholm' );
  */
 
 if ( ! isset( $content_width ) ) {
-  $content_width = 1024;
+  $content_width = 1200;
 }
 
 /**
@@ -27,7 +27,10 @@ add_action( 'after_setup_theme', 'register_my_menus' );
 function register_my_menus() {
   register_nav_menus( array(
     'primary' => 'Primary Menu',
-    'footer_menu' => 'Footer Menu'
+    'footer_menu' => 'Footer Menu',
+    'for_ungdom' => 'För Ungdom',
+    'for_politiker' => 'För Politiker',
+    'for_journalister' => 'För Journalister'
   ));
 }
 

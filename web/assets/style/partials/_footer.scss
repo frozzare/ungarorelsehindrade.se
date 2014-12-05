@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  $FOOTER
+\*------------------------------------*/
+
+.footer{
+  background-color: $base-ui-color;
+  color: #fff;
+  @extend .cf;
+
+  &__inner{
+    padding: 2em 0;
+  }
+}
